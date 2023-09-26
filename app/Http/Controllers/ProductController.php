@@ -78,7 +78,7 @@ class ProductController extends Controller
 
     // Update Product
     public function  update(Request $request, Product $product) {
-        // try{
+        try{
             $formFields = $request->validate([
                 'title' => 'required',
                 'company' => ['required'],
@@ -100,9 +100,9 @@ class ProductController extends Controller
             $product->update($formFields);
             
             return back()->with('message', 'Product updated successfully!');
-        // } catch (\Exception $e) {
-        //     return redirect()->back()->with('error', 'Error creating product: ' . $e->getMessage());
-        // }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error creating product: ' . $e->getMessage());
+        }
     }
 
     // Delete Product

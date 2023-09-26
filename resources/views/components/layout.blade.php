@@ -38,30 +38,30 @@
 
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
-                    <li>
-                        <span class="font-bold ">Welcome <span class="uppercase">{{ auth()->user()->name }}</span></span>
+                    <li class="">
+                        <span class=" ">Welcome <span class="uppercase text-red-500">{{ auth()->user()->name }}</span></span>
                     </li>
                     <li>
                         <a href="/products/manage" class="hover:text-laravel">
-                            <i class="fa-solid fa-gear"></i> Manage
+                            <i class="fa-solid fa-gear text-red-500"></i> Manage
                         </a>
                     </li>
                     <li>
                         <form action="/logout" method="POST" class="inline">
                             @csrf
-                            <button type="submit"> <i class="fa-solid fa-door-closed"></i> Logout</button>
+                            <button type="submit"> <i class="fa-solid fa-door-closed text-red-500"></i> Logout</button>
                         </form>
                     </li>
 
                     @else
                     <li>
                         <a href="/register" class="hover:text-laravel">
-                            <i class="fa-solid fa-user-plus"></i> Register
+                            <i class="fa-solid fa-user-plus text-red-500"></i> Register
                         </a>
                     </li>
                     <li>
                         <a href="/login" class="hover:text-laravel">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                            <i class="fa-solid fa-arrow-right-to-bracket text-red-500"></i> Login
                         </a>
                     </li>
                 @endauth
@@ -72,19 +72,19 @@
           
         </main>
         <footer
-            class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-14 mt-24 opacity-90 md:justify-center"
+            class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-14 mt-24 opacity-80 md:justify-center"
         >
             <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
             @auth
                 <a
                     href="products/create "
-                    class="absolute top-1/5 right-10 bg-black text-white py-2 px-5"
+                    class="absolute top-1/5 right-10 bg-white text-black hover:bg-black hover:text-white py-2 px-5"
                     >Post Product</a
                 >
                 @else
                 <a
                 href="/login"
-                class="absolute top-1/5 right-10 bg-black text-white py-2 px-5"
+                class="absolute top-1/5 right-10 bg-white text-black hover:bg-black hover:text-white py-2 px-5"
                 >Post Product</a
                 >  
             @endauth

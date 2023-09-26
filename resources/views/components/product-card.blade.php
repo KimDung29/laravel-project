@@ -9,15 +9,15 @@
         /> --}}
         <x-image :product='$product' />
         <div>
-            <h3 class="text-2xl">
+            <h3 class="text-xl font-bold">
                 <a href="/products/{{$product->id}}">{{$product->title}}</a>
             </h3>
-            <div class="text-xl font-bold mb-4">{{$product->company}}</div>
+            <div class="text-lg  mb-4">{{$product->company}}</div>
             
             <x-product-tags :tagsProp="$product->tags"/>
                  
             <div class="text-lg mt-4">
-                <i class="fa-solid fa-location-dot"></i> {{$product->location}}
+                <i class="fa-solid fa-location-dot text-red-500"></i> {{$product->location}}
             </div>
         </div>
     </div>
