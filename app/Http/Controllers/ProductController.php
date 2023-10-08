@@ -16,12 +16,14 @@ class ProductController extends Controller
             $products = Product::where('user_id', auth()->id())
                 ->latest()
                 ->filter(request(['tag', 'search']))
-                ->paginate(4);
+                // ->paginate(4)
+                ;
         } else {
             // If not authenticated, fetch all products and apply filtering and pagination
             $products = Product::latest()
                 ->filter(request(['tag', 'search']))
-                ->paginate(4);
+                // ->paginate(4)
+                ;
         }
 
         return view('products.index', compact('products'));
